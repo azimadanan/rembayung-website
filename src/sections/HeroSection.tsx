@@ -51,17 +51,11 @@ export default function HeroSection() {
           }}
           className="absolute inset-0"
         >
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover"
-            poster="/images/hero-bg.png"
-          >
-            <source src="/videos/hero-video-ka.webp" type="video/webp" />
-            <source src="/videos/hero-video.mp4" type="video/mp4" />
-          </video>
+          <img
+            src="/videos/hero-video-ka.webp"
+            alt="Hero Background"
+            className="w-full h-full object-cover bg-primary"
+          />
         </motion.div>
         {/* Darker Gradient to ensure text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80" />
