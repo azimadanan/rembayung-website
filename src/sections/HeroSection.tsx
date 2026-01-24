@@ -59,7 +59,7 @@ export default function HeroSection() {
             className="w-full h-full object-cover"
             poster="/images/hero-bg.png"
           >
-            <source src="/videos/Video Project 6.mp4" type="video/mp4" />
+            <source src="/videos/hero-video.mp4" type="video/mp4" />
           </video>
         </motion.div>
         {/* Darker Gradient to ensure text readability */}

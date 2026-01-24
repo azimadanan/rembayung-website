@@ -19,6 +19,7 @@ dist-ssr
 
 # Large video file (exceeds GitHub 100MB limit)
 public/videos/hero-reel.mp4
+public/videos/Video Project 6.mp4
 
 # Editor directories and files
 .vscode/*
@@ -30,3 +31,6 @@ public/videos/hero-reel.mp4
 *.njsproj
 *.sln
 *.sw?
+
+# Local Netlify folder
+.netlify
