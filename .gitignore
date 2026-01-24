@@ -17,9 +17,10 @@ dist-ssr
 .env.local
 .env.*.local
 
+# Optimized video files (Safe for Git)
+public/videos/hero-video-ka.webp
 # Large video files (exceeds GitHub 100MB limit)
 public/videos/hero-reel.mp4
-public/videos/hero-video.mp4
 
 # Editor directories and files
 .vscode/*

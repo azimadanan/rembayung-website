@@ -59,11 +59,12 @@ export default function HeroSection() {
             className="w-full h-full object-cover"
             poster="/images/hero-bg.png"
           >
+            <source src="/videos/hero-video-ka.webp" type="video/webp" />
             <source src="/videos/hero-video.mp4" type="video/mp4" />
           </video>
         </motion.div>
         {/* Darker Gradient to ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/80" />
       </motion.div>
 
       {/* Songket Pattern Overlay */}
