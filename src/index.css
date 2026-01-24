@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+@import "tailwindcss";
+
+/* Custom CSS Variables - "Modern Malaysian Songket" Palette */
+:root {
+  /* Primary: Deep Mahogany/Charcoal (Dark & Moody Base) */
+  --color-primary: #1a1616; /* Almost black warm brown */
+  --color-primary-light: #2d2625; /* Lighter shade for cards */
+
+  /* Accent: Metallic Gold (Songket Thread) */
+  --color-gold: #d4af37;
+  --color-gold-light: #f3e5ab; /* Shimmer */
+  --color-accent: #8c2f26; /* Deep Red (Manggis) for highlights */
+
+  /* Secondary: Sage (Nature) - Desaturated */
+  --color-secondary: #606d51;
+
+  /* Backgrounds: Bone/Ivory (Texture contrast) */
+  --color-cream: #e6e2dd;
+  --color-glass: rgba(26, 22, 22, 0.7);
+
+  /* Functional Colors */
+  --color-highlight: var(--color-gold);
+  --color-success: #606d51;
+  --color-error: #991b1b;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--color-primary);
+  color: var(--color-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dark);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Form Inputs */
+input,
+select,
+textarea {
+  font-family: "Outfit", sans-serif;
+}
+
+/* Utility Classes */
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+
+.font-caveat {
+  font-family: "Caveat", cursive;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.font-caveat {
+  font-family: "Caveat", cursive;
+}
+
+.text-gold {
+  color: var(--color-gold);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-cream {
+  color: var(--color-cream);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-light {
+  background-color: var(--color-primary-light);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+/* Glassmorphism */
+.glass {
+  -webkit-backdrop-filter: blur(6.5px);
+  backdrop-filter: blur(6.5px);
+  background: rgba(255, 255, 255, 0.33);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.51);
+}
+
+/* Batik Pattern Overlay */
+/* Patterns */
+.pattern-songket {
+  position: relative;
+  background-color: var(--color-primary);
+  background-image:
+    radial-gradient(var(--color-gold) 1.5px, transparent 1.5px),
+    radial-gradient(var(--color-gold) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-position:
+    0 0,
+    15px 15px;
+  opacity: 1;
+}
+
+.pattern-songket::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--color-primary) 10%,
+    transparent 50%,
+    var(--color-primary) 90%
+  );
+  pointer-events: none;
+}
+
+.pattern-batik-geo {
+  background-color: var(--color-primary-light);
+  background-image:
+    radial-gradient(
+      circle at 100% 50%,
+      transparent 20%,
+      rgba(212, 175, 55, 0.05) 21%,
+      rgba(212, 175, 55, 0.05) 34%,
+      transparent 35%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0% 50%,
+      transparent 20%,
+      rgba(212, 175, 55, 0.05) 21%,
+      rgba(212, 175, 55, 0.05) 34%,
+      transparent 35%,
+      transparent
+    ) !important;
+  background-size: 40px 40px;
+}
+
+/* Premium Utilities */
+.text-gradient-gold {
+  background: linear-gradient(
+    to right,
+    var(--color-gold),
+    var(--color-gold-light),
+    var(--color-gold)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
+
+.card-premium {
+  background: rgba(30, 25, 25, 0.85); /* Darker glass */
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Stable Admin UI Components (Independent of global glass) */
+.admin-card {
+  background: rgba(35, 30, 30, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.admin-stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.admin-stat-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.admin-nav {
+  background: rgba(15, 12, 12, 0.98);
+  border-bottom: 2px solid rgba(212, 175, 55, 0.2);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Button Styles */
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-gold), #b8860b);
+  color: #000;
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.accent-gold {
+  accent-color: var(--color-gold);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-cream);
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Section Styling */
+.section {
+  padding: 6rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 8rem 2rem;
+  }
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-cream);
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3.5rem;
+  }
+}
+
+.section-subtitle {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--color-accent),
+    var(--color-secondary)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+  margin: 1.5rem 0;
+}
+
+/* Image hover effect */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
