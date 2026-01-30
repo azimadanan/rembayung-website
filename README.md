@@ -136,7 +136,7 @@ rembayung-website/
 1. Go to [http://localhost:5174/admin/login](http://localhost:5174/admin/login)
 2. Login with:
    - Email: `admin@rembayung.com`
-   - Password: `Rembayung2026!`
+   - Password: `admin123`
 3. Verify you see the bookings dashboard ✅
 4. Try confirming/cancelling a booking ✅
 
